@@ -1,0 +1,31 @@
+<section id="portfolio" class="section portfolio-section">
+    <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-subtitle">My recent work</p>
+
+        <div class="portfolio-filters">
+            <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="filterPortfolio('all')">
+                ALL
+            </button>
+            <button class="filter-btn" [class.active]="activeFilter === 'web'" (click)="filterPortfolio('web')">
+                WEB
+            </button>
+            <button class="filter-btn" [class.active]="activeFilter === 'mobile'" (click)="filterPortfolio('mobile')">
+                MOBILE
+            </button>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item" *ngFor="let item of filteredPortfolio">
+                <div class="portfolio-image">
+                    <img [src]="item.image" height="100%" width="100%" [alt]="item.title" />
+                    <div class="portfolio-overlay">
+                        <h4>{{ item.title }}</h4>
+                        <p>{{ item.description }}</p>
+                        <button class="btn btn-primary btn-sm">VIEW PROJECT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,93 @@
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">Let's work together</p>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>
+                    Have a project in mind or want to collaborate? Feel free to reach out.
+                    I'm always open to discussing new projects and opportunities.
+                </p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>Gokulparathasarathy1973&#64;gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone" style="color: #ffffff;"></i> </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91-9344921690</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Bangalore, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <button class="social-btn" (click)="openSocial('linkedin')" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </button>
+                    <button class="social-btn" (click)="openSocial('github')" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </button>
+                    <button class="social-btn" (click)="openSocial('twitter')" title="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </button>
+                    <button class="social-btn" (click)="openSocial('instagram')" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form class="contact-form" (ngSubmit)="submitContactForm()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" [(ngModel)]="contactForm.name"
+                            name="name" required [disabled]="isLoading" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email"
+                            [(ngModel)]="contactForm.email" name="email" required [disabled]="isLoading" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Subject" [(ngModel)]="contactForm.subject"
+                            name="subject" required [disabled]="isLoading" />
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your Message" rows="5"
+                            [(ngModel)]="contactForm.message" name="message" required [disabled]="isLoading"></textarea>
+                    </div>
+
+                    <div class="status-message" *ngIf="statusMessage" [class.success]="isSuccess"
+                        [class.error]="!isSuccess">
+                        {{ statusMessage }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" [disabled]="isLoading">
+                        <span *ngIf="!isLoading">SEND MESSAGE</span>
+                        <span *ngIf="isLoading">SENDING...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

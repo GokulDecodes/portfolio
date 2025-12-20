@@ -1,0 +1,22 @@
+<section id="services" class="section services-section">
+    <div class="container">
+        <h2 class="section-title">SERVICES</h2>
+        <p class="section-subtitle">What I offer to my clients</p>
+
+        <div class="services-grid">
+            <div class="service-card" *ngFor="let service of services">
+                <div class="service-icon">
+                    <img *ngIf="service.icon.includes('.png') || service.icon.includes('.jpg') || service.icon.includes('.svg')"
+                        [src]="service.icon" [alt]="service.title + ' icon'" />
+                    <i *ngIf="service.icon.includes('fa-')" [class]="service.icon"></i>
+                    <span
+                        *ngIf="!service.icon.includes('.png') && !service.icon.includes('.jpg') && !service.icon.includes('.svg') && !service.icon.includes('fa-')">
+                        {{ service.icon }}
+                    </span>
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-description">{{ service.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>

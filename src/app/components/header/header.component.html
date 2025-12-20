@@ -1,0 +1,26 @@
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-text">GOKUL</span>
+            </div>
+
+            <div class="nav-menu" [class.active]="menuOpen">
+                <a (click)="scrollTo('home')" class="nav-link">HOME</a>
+                <a (click)="scrollTo('services')" class="nav-link">SERVICES</a>
+                <a (click)="scrollTo('about')" class="nav-link">ABOUT</a>
+                <a (click)="scrollTo('skills')" class="nav-link">SKILLS</a>
+                <a (click)="scrollTo('portfolio')" class="nav-link">PORTFOLIO</a>
+                <a (click)="scrollTo('contact')" class="nav-link">CONTACT</a>
+            </div>
+
+            <button class="btn btn-primary nav-cta" (click)="scrollTo('contact')">HIRE ME</button>
+
+            <button class="menu-toggle" (click)="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </div>
+</header>
