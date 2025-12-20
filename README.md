@@ -1,59 +1,105 @@
-# Portfolio
+# Gokul P - Portfolio Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+A modern, responsive portfolio website built with Angular 18+.
 
-## Development server
+![Portfolio](public/portfolio/project1.png)
 
-To start a local development server, run:
+## 🚀 Quick Start
 
-```bash
-ng serve
+### Prerequisites
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/GokulDecodes/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   ng serve
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:4200`
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── header/
+│   │   │   ├── hero/
+│   │   │   ├── services/
+│   │   │   ├── about/
+│   │   │   ├── skills/
+│   │   │   ├── portfolio/
+│   │   │   ├── contact/
+│   │   │   └── footer/
+│   │   └── app.component.ts
+│   ├── styles.css
+│   └── index.html
+├── public/
+│   ├── profile1.png
+│   ├── profile2.png
+│   └── portfolio/
+└── package.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ✨ Features
 
-## Code scaffolding
+- **Responsive Design** - Works on all devices
+- **Modern UI/UX** - Clean, professional design
+- **Contact Form** - EmailJS integration for sending messages
+- **Skill Categories** - Organized technical skills display
+- **Portfolio Gallery** - Project showcase with hover effects
+- **Smooth Scrolling** - Navigation between sections
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Technologies
 
-```bash
-ng generate component component-name
-```
+- Angular 18+
+- TypeScript
+- CSS3 (Flexbox, Grid, CSS Variables)
+- EmailJS
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📧 Contact Form Setup
 
-```bash
-ng generate --help
-```
+The contact form uses EmailJS. To configure:
 
-## Building
+1. Create an account at [emailjs.com](https://www.emailjs.com/)
+2. Add your email service (Gmail)
+3. Create an email template
+4. Update the credentials in `src/app/components/contact/contact.component.ts`:
+   ```typescript
+   private serviceId = 'your_service_id';
+   private templateId = 'your_template_id';
+   private publicKey = 'your_public_key';
+   ```
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## 📦 Build
 
 ```bash
-ng e2e
+ng build --configuration production
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Output will be in `dist/portfolio/browser/`
 
-## Additional Resources
+## 📄 License
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT License
+
+## 👨‍💻 Author
+
+**Gokul Partha Sarathy**
+- LinkedIn: [gokul-partha-sarathy](https://www.linkedin.com/in/gokul-partha-sarathy-a056392a1/)
+- GitHub: [GokulDecodes](https://github.com/GokulDecodes)

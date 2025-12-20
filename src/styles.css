@@ -333,7 +333,8 @@ a:hover {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  /* Desktop only: width becomes 0 when viewport < 1024px */
+  width: clamp(0px, (100vw - 1024px) * 1000, 50%);
   height: 100%;
   background: radial-gradient(circle at center, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
   pointer-events: none;
