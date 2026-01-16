@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MySharedServiceService } from '../../service/my-shared-service.service';
 
@@ -18,6 +18,12 @@ interface PortfolioItem {
     styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent {
+    @HostListener('document:keydown.escape', ['$event'])
+    onClick(event: KeyboardEvent) {
+        if (event.target) {
+            this.closeProject();
+        }
+    }
     constructor(private mySharedService: MySharedServiceService) {
         this.mySharedService.updateProjectsCompleted(this.portfolioItems.length.toString());
     }
@@ -71,6 +77,22 @@ export class PortfolioComponent {
             this.filteredPortfolio = this.portfolioItems.filter(
                 item => item.category.includes(category)
             );
+        }
+    }
+
+    selectedProject: PortfolioItem | null = null;
+
+    openProject(item: PortfolioItem) {
+        this.selectedProject = item;
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    closeProject() {
+        this.selectedProject = null;
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    ngAfterContentChecked(){
+        if(this.selectedProject ){
         }
     }
 }

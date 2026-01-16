@@ -60,7 +60,47 @@
   --z-modal: 1040;
   --z-popover: 1050;
   --z-tooltip: 1060;
+
+  /* Header */
+  --header-bg: rgba(10, 10, 10, 0.95);
 }
+
+[data-theme="light"] {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f4f4f5;
+  --color-bg-card: #ffffff;
+  --color-text-primary: #18181b;
+  --color-text-secondary: #52525b;
+  --color-border: #e4e4e7;
+  
+  /* Shadow adjustments for light mode */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(255, 107, 53, 0.2);
+
+  /* Header Light */
+  --header-bg: rgba(255, 255, 255, 0.95);
+
+  /* Button Contrast for Light Mode */
+  --color-btn-primary-light: #18181b; /* Dark button for contrast */
+  --color-btn-text-light: #ffffff;
+}
+
+/* Light Theme Button Overrides */
+[data-theme="light"] .btn-primary {
+  background: var(--color-btn-primary-light);
+  color: var(--color-btn-text-light);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background: black;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 
 /* Reset & Base Styles */
 * {
@@ -889,6 +929,13 @@ textarea.form-control {
    RESPONSIVE DESIGN
    =================================== */
 @media (max-width: 1024px) {
+  :root {
+    --font-size-5xl: 2.5rem;
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.75rem;
+    --spacing-3xl: 4rem;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -937,6 +984,20 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --font-size-5xl: 2rem;
+    --font-size-4xl: 1.75rem;
+    --font-size-3xl: 1.5rem;
+    --font-size-2xl: 1.25rem;
+    --spacing-3xl: 3rem;
+    --spacing-2xl: 2.5rem;
+    --spacing-xl: 1.5rem;
+  }
+
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+
   .nav-menu {
     position: fixed;
     top: 70px;

@@ -29,7 +29,7 @@ export class SkillsComponent {
         },
         {
             title: 'DevOps',
-            skills: ['Jenkins', 'GitLab CI/CD', 'Docker']
+            skills: ['Jenkins', 'GitLab CI/CD', 'Docker (Basic)']
         },
         {
             title: 'Tools',

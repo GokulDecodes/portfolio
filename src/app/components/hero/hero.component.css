@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     padding-top: 80px;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -131,6 +131,7 @@
 
     .hero-image {
         order: 1;
+        padding: 0;
     }
 
     .hero-buttons {

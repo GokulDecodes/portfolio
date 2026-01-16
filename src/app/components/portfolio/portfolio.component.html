@@ -1,7 +1,7 @@
 <section id="portfolio" class="section portfolio-section">
     <div class="container">
-        <h2 class="section-title">Portfolio</h2>
-        <p class="section-subtitle">My recent work</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">My works</p>
 
         <div class="portfolio-filters">
             <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="filterPortfolio('all')">
@@ -22,7 +22,33 @@
                     <div class="portfolio-overlay">
                         <h4>{{ item.title }}</h4>
                         <p>{{ item.description }}</p>
-                        <button class="btn btn-primary btn-sm">VIEW PROJECT</button>
+                        <button class="btn btn-primary btn-sm" (click)="openProject(item)">VIEW PROJECT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="project-modal-backdrop" *ngIf="selectedProject" (click)="closeProject()">
+        <div class="project-modal" (click)="$event.stopPropagation()">
+            <button class="close-btn" (click)="closeProject()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img [src]="selectedProject.image" [alt]="selectedProject.title">
+                </div>
+                
+                <div class="modal-details">
+                    <div class="modal-header">
+                        <span class="modal-category" *ngFor="let cat of selectedProject.category">{{cat}}</span>
+                        <h3>{{ selectedProject.title }}</h3>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p>{{ selectedProject.description }}</p>
                     </div>
                 </div>
             </div>

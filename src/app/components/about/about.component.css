@@ -25,7 +25,6 @@
     left: -15px;
     width: 100%;
     height: 100%;
-    border: 3px solid var(--color-accent);
     border-radius: var(--radius-xl);
     z-index: -1;
 }
