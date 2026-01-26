@@ -66,6 +66,23 @@ export class PortfolioComponent {
         }
     ];
 
+    certificateItems: PortfolioItem[] = [
+        {
+            id: 6,
+            title: 'Basic Payment Integration',
+            category: ['certification'],
+            image: '/Basic_payment.jpeg',
+            description: 'Certificate for Basic Payment Integration'
+        },
+        {
+            id: 7,
+            title: 'SOLID Principles',
+            category: ['certification'],
+            image: '/Solid_principle.jpeg',
+            description: 'Certificate for SOLID Principles'
+        }
+    ];
+
     filteredPortfolio: PortfolioItem[] = this.portfolioItems;
     activeFilter = 'all';
 

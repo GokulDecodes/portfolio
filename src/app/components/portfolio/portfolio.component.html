@@ -27,6 +27,20 @@
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title" style="margin-top: 50px;">Certifications</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" *ngFor="let item of certificateItems">
+                <div class="portfolio-image">
+                    <img [src]="item.image" height="100%" width="100%" [alt]="item.title" />
+                    <div class="portfolio-overlay">
+                        <h4>{{ item.title }}</h4>
+                        <p>{{ item.description }}</p>
+                        <button class="btn btn-primary btn-sm" (click)="openProject(item)">VIEW DETAILS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Project Modal -->
