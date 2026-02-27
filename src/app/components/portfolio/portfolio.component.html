@@ -1,66 +1,65 @@
 <section id="portfolio" class="section portfolio-section">
     <div class="container">
         <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">My works</p>
+        <p class="section-subtitle">Selected work and enterprise solutions I have built</p>
 
         <div class="portfolio-filters">
             <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="filterPortfolio('all')">
-                ALL
+                All
             </button>
             <button class="filter-btn" [class.active]="activeFilter === 'web'" (click)="filterPortfolio('web')">
-                WEB
+                Web
             </button>
             <button class="filter-btn" [class.active]="activeFilter === 'mobile'" (click)="filterPortfolio('mobile')">
-                MOBILE
+                Mobile
             </button>
         </div>
 
         <div class="portfolio-grid">
-            <div class="portfolio-item" *ngFor="let item of filteredPortfolio">
+            <div class="portfolio-item" *ngFor="let item of filteredPortfolio" tabindex="0">
                 <div class="portfolio-image">
                     <img [src]="item.image" height="100%" width="100%" [alt]="item.title" />
                     <div class="portfolio-overlay">
                         <h4>{{ item.title }}</h4>
                         <p>{{ item.description }}</p>
-                        <button class="btn btn-primary btn-sm" (click)="openProject(item)">VIEW PROJECT</button>
+                        <button class="btn btn-primary btn-sm" (click)="openProject(item)">View Project</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title" style="margin-top: 50px;">Certifications</h2>
+        <h2 class="section-title section-title-secondary">Certifications</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item" *ngFor="let item of certificateItems">
+            <div class="portfolio-item" *ngFor="let item of certificateItems" tabindex="0">
                 <div class="portfolio-image">
                     <img [src]="item.image" height="100%" width="100%" [alt]="item.title" />
                     <div class="portfolio-overlay">
                         <h4>{{ item.title }}</h4>
                         <p>{{ item.description }}</p>
-                        <button class="btn btn-primary btn-sm" (click)="openProject(item)">VIEW DETAILS</button>
+                        <button class="btn btn-primary btn-sm" (click)="openProject(item)">View Details</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Project Modal -->
     <div class="project-modal-backdrop" *ngIf="selectedProject" (click)="closeProject()">
         <div class="project-modal" (click)="$event.stopPropagation()">
             <button class="close-btn" (click)="closeProject()">
                 <i class="fas fa-times"></i>
             </button>
-            
+
             <div class="modal-content">
                 <div class="modal-image">
                     <img [src]="selectedProject.image" [alt]="selectedProject.title">
                 </div>
-                
+
                 <div class="modal-details">
                     <div class="modal-header">
                         <span class="modal-category" *ngFor="let cat of selectedProject.category">{{cat}}</span>
                         <h3>{{ selectedProject.title }}</h3>
                     </div>
-                    
+
                     <div class="modal-body">
                         <p>{{ selectedProject.description }}</p>
                     </div>

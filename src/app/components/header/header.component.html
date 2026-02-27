@@ -1,26 +1,26 @@
 <header class="header">
     <div class="container">
         <nav class="navbar">
-            <div class="logo">
-                <span class="logo-text">GOKUL</span>
-            </div>
+            <button class="logo" (click)="scrollTo('home')" aria-label="Go to home section">
+                <span class="logo-text">Gokul</span>
+            </button>
 
             <div class="nav-menu" [class.active]="menuOpen">
-                <a (click)="scrollTo('home')" class="nav-link">HOME</a>
-                <a (click)="scrollTo('services')" class="nav-link">SERVICES</a>
-                <a (click)="scrollTo('about')" class="nav-link">ABOUT</a>
-                <a (click)="scrollTo('skills')" class="nav-link">SKILLS</a>
-                <a (click)="scrollTo('portfolio')" class="nav-link">PORTFOLIO</a>
-                <a (click)="scrollTo('contact')" class="nav-link">CONTACT</a>
+                <a (click)="scrollTo('home')" class="nav-link">Home</a>
+                <a (click)="scrollTo('services')" class="nav-link">Services</a>
+                <a (click)="scrollTo('about')" class="nav-link">About</a>
+                <a (click)="scrollTo('skills')" class="nav-link">Skills</a>
+                <a (click)="scrollTo('portfolio')" class="nav-link">Projects</a>
+                <a (click)="scrollTo('contact')" class="nav-link">Contact</a>
             </div>
 
-            <div class="nav-controls" style="display: flex; align-items: center; gap: 1rem;">
-                <button class="theme-toggle" (click)="toggleTheme()" style="background: none; border: none; color: var(--color-text-primary); cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; padding: 0.5rem; transition: color 0.2s;">
+            <div class="nav-controls">
+                <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle theme">
                     <i class="fas" [class.fa-sun]="(currentTheme$ | async) === 'dark'" [class.fa-moon]="(currentTheme$ | async) === 'light'"></i>
                 </button>
-                <button class="btn btn-primary nav-cta" style="margin-left: 0;" (click)="scrollTo('contact')">HIRE ME</button>
-            
-                <button class="menu-toggle" (click)="toggleMenu()">
+                <button class="btn btn-primary nav-cta" (click)="scrollTo('contact')">Hire Me</button>
+
+                <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
