@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Angular 18+.
 
-![Portfolio](public/portfolio/favicon.png)
+![Portfolio](public/favicon.png)
 
 ## 🚀 Quick Start
 
